@@ -60,3 +60,10 @@ eptraj.disable_numba()
 
 The Numba implementation does not support `DISABLE_*` simulation flags; it
 supports the default flags and `ENABLE_LOW_FREQ_APPROXIMATION`.
+
+For large-scale simulations (around 100k or more particles), use CuPy or
+`mlx.core` to run computations on the GPU. Numba uses multiple CPU cores and
+is a good fit for medium-sized simulations (around 10k or more particles).
+For small simulations, use the standard, non-accelerated NumPy backend.
+Seeding Brownian motion is only supported with this non-accelerated NumPy
+backend.
