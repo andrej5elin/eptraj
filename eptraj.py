@@ -24,7 +24,7 @@ Time step is implemented as an iterative update of particle coordinates based on
 
 Precision is float32 unless the environment variable
 
-``EPSIM_USE_DOUBLE_PRECISION=1`` is set before this module is imported.
+``EPTRAJ_USE_DOUBLE_PRECISION=1`` is set before this module is imported.
 """
 
 from __future__ import annotations
@@ -62,7 +62,7 @@ ENABLE_LOW_FREQ_APPROXIMATION = 32
 ENABLE_SURFACE_ADHESION = 64
 
 #: whether we use double precision in calculations 
-USE_DOUBLE_PRECISION = os.environ.get("EPSIM_USE_DOUBLE_PRECISION", "0") == "1"    
+USE_DOUBLE_PRECISION = os.environ.get("EPTRAJ_USE_DOUBLE_PRECISION", "0") == "1"    
 
 try:
     import numba as nb
@@ -100,7 +100,7 @@ def disable_numba() -> None:
     USE_NUMBA = False   
 
 if USE_DOUBLE_PRECISION:
-    print("epsim: Using double precision")
+    print("eptraj: Using double precision")
 
     def fdtype():
         """backend-specific floating point dtype"""
@@ -117,7 +117,7 @@ if USE_DOUBLE_PRECISION:
         nbint = nb.int32
 
 else:
-    print("epsim: Using single precision")
+    print("eptraj: Using single precision")
     def fdtype():
         """backend-specific floating point dtype"""
         return xp.float32
