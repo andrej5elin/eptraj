@@ -17,11 +17,3 @@ The PyPI package provides the `eptraj.py` module. Import it in Python with:
 ```python
 import eptraj
 ```
-
-## Publishing
-
-The GitHub Actions workflow publishes distributions to PyPI when a `v*` tag is
-pushed. Configure a PyPI trusted publisher for this repository, using the
-`.github/workflows/publish.yml` workflow and the `pypi` environment, then bump
-`__version__` in `eptraj.py` and push a matching version tag (for example,
-`v0.1.0`).
