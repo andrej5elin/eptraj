@@ -29,6 +29,8 @@ Precision is float32 unless the environment variable
 
 from __future__ import annotations
 
+__version__ = "0.1.0"
+
 from cmath import cos
 import os
 from functools import cache
