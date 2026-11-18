@@ -4,6 +4,10 @@
 electrophoresis, pressure-driven flow, and Brownian motion in microfluidic
 channels.
 
+The package is a part of the particle motion simulator used to study particle dynamics in digital Fourier
+microscopy. See [mie_particle_motion](https://github.com/andrej5elin/mie_particle_motion)
+for example on how to use this package.
+
 ## Installation
 
 Install the package from PyPI with pip:
